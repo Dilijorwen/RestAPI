@@ -1,6 +1,7 @@
 package com.example.restapi.Task.Controller;
 
 
+import com.example.restapi.Task.Exception.RestApiException;
 import com.example.restapi.Task.Exception.UserAlreadyExistException;
 import com.example.restapi.Task.Exception.UserCanNotBeDeleted;
 import com.example.restapi.Task.Exception.UserNotFoundException;
@@ -19,14 +20,8 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity registartion(@RequestBody UserEntity user) {
-        try {
             userService.registartion(user);
             return ResponseEntity.ok("Пользователь успешно сохранен");
-        } catch (UserAlreadyExistException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().body("Произошла неизвестная ошибка!!");
-        }
     }
 
     @GetMapping("/all")
