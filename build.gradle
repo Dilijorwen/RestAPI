@@ -18,10 +18,10 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'//для того чтобы поднять сервер на локалке
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'//Для работы с БД
-    implementation 'org.flywaydb:flyway-core' //для миграций
+//    implementation 'org.flywaydb:flyway-core' //для миграций
     implementation group: 'org.modelmapper', name: 'modelmapper', version: '3.1.1' //для того, чтобы легко конвертировать классы в DTO
     compileOnly 'org.projectlombok:lombok' //для @Getter, @Setter, @Data
-    developmentOnly 'org.springframework.boot:spring-boot-devtools' //не могу сообщить точную информацию
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'org.postgresql:postgresql' //для работы с postgresql
     annotationProcessor 'org.projectlombok:lombok' //для @Getter, @Setter, @Data
     testImplementation 'org.springframework.boot:spring-boot-starter-test'//автоматические тесты от Spring

@@ -1,0 +1,1 @@
+-- alter table users add achievements varchar(255);
