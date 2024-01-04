@@ -1,7 +1,9 @@
 package com.example.restapi.Task.Exception;
 
-public class UserAlreadyExistException extends Exception{
+import org.springframework.http.HttpStatus;
+
+public class UserAlreadyExistException extends RestApiException{
     public UserAlreadyExistException(String message) {
-        super(message);
+        super(HttpStatus.BAD_REQUEST, message);
     }
 }

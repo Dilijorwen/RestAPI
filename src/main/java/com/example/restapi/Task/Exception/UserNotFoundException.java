@@ -1,7 +1,9 @@
 package com.example.restapi.Task.Exception;
 
-public class UserNotFoundException extends Exception{
+import org.springframework.http.HttpStatus;
+
+public class UserNotFoundException extends RestApiException{
     public UserNotFoundException(String message) {
-        super(message);
+        super(HttpStatus.NOT_FOUND, message);
     }
 }
